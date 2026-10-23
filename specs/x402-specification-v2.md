@@ -306,6 +306,8 @@ None of these is a second derivation of the attempt identity.
 
 This invariant is independent of the artifact's name or mechanism. An implementation that already uses `Idempotency-Key` satisfies it by binding that key to the ingress snapshot; an implementation that uses `attempt_id` satisfies it the same way. The requirement is the *discipline* (derive once, resolve identically), not the introduction of a specific field.
 
+**This section's place in the grounding stack.** The invariant and boundary set out here govern the identity-and-binding half of grounding — the part every grounding method must satisfy before a rating can point, verifiably, at the payment that grounds it. It is the coordination point on which the offer-and-receipt extension (#3827/#3830) and any later grounding method compose; the commitment format itself remains owned by those extensions. As the grounding work grows, this section is intended to be the stable base the rest of the stack is built on, so that new methods can be added without re-litigating the identity rule. We invite the spec owners to align their extensions here.
+
 See [§10.1 Replay Attack Prevention](#101-replay-attack-prevention) and the normative conformance tests in the specification repository for the required negative cases.
 
 **6. Payment Schemes (The Logic)**
